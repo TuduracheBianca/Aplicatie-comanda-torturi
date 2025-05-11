@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="435.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController">
+   <children>
+      <!-- TableView pentru Torturi -->
+      <TableView fx:id="tortTable" layoutX="20.0" layoutY="50.0" prefHeight="200.0" prefWidth="400.0">
+         <columns>
+            <TableColumn fx:id="idTortColumn" prefWidth="100.0" text="ID" />
+            <TableColumn fx:id="tipTortColumn" prefWidth="299.1999969482422" text="Tip Tort" />
+         </columns>
+      </TableView>
+
+      <!-- Tabel pentru Comenzi -->
+      <TableView fx:id="comandaTable" layoutX="20.0" layoutY="300.0" prefHeight="200.0" prefWidth="400.0">
+         <columns>
+            <TableColumn fx:id="idComandaColumn" prefWidth="100.0" text="ID Comanda" />
+            <TableColumn fx:id="torturiComandaColumn" prefWidth="200.0" text="Torturi" />
+            <TableColumn fx:id="dataComandaColumn" prefWidth="100.0" text="Data Comanda" />
+         </columns>
+      </TableView>
+
+      <!-- Butoane pentru torturi -->
+      <Button layoutX="20.0" layoutY="550.0" onAction="#adaugaTort" text="Adaugă Tort" />
+      <Button layoutX="324.0" layoutY="550.0" onAction="#stergeTort" text="Șterge Tort" />
+      <Button layoutX="176.0" layoutY="550.0" onAction="#modificaTort" text="Modifică Tort" />
+
+      <!-- Butoane pentru comenzi -->
+      <Button layoutX="436.0" layoutY="150.0" onAction="#adaugaComanda" text="Adaugă Comandă" textFill="#0b761f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="552.0" layoutY="150.0" onAction="#stergeComanda" text="Șterge Comandă" textFill="#0e5ecf">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="666.0" layoutY="150.0" onAction="#modificaComanda" text="Modifică Comandă" textFill="#a11010">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+
+      <!-- Butoane pentru rapoarte -->
+      <Button layoutX="450.0" layoutY="300.0" onAction="#afisareTorturi" text="Arată Torturi" textFill="#b15f28">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button layoutX="577.0" layoutY="300.0" onAction="#afisareComanda" text="Arată Comenzi" textFill="#a49e2e">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button layoutX="430.0" layoutY="400.0" onAction="#arataRapoarteZilnice" text="Rapoarte Zilnice">
+         <font>
+            <Font name="Bell MT" size="12.0" />
+         </font></Button>
+      <Button layoutX="545.0" layoutY="400.0" onAction="#arataRapoarteLunare" text="Rapoarte Lunare">
+         <font>
+            <Font name="Bell MT" size="12.0" />
+         </font></Button>
+      <Button layoutX="657.0" layoutY="400.0" onAction="#arataTorturiCeleMaiComandate" text="Cele Mai Comandate Torturi">
+         <font>
+            <Font name="Bell MT" size="12.0" />
+         </font></Button>
+
+      <!-- ListView pentru a vizualiza rapoartele -->
+      <ListView fx:id="listView" layoutX="430.0" layoutY="424.0" prefHeight="237.0" prefWidth="388.0" />
+
+      <!-- Câmpuri de text pentru adăugare/modificare torturi și comenzi -->
+<!--      <TextField fx:id="idTortField" layoutX="20.0" layoutY="470.0" promptText="ID Tort"/>-->
+      <TextField fx:id="numeTortField" layoutX="20.0" layoutY="517.0" promptText="Nume Tort" />
+<!--      <TextField fx:id="idComandaField" layoutX="450.0" layoutY="180.0" promptText="ID Comanda"/>-->
+      <TextField fx:id="torturiComandaField" layoutX="436.0" layoutY="180.0" promptText="Torturi Comanda" />
+      <TextField fx:id="dataComandaField" layoutX="591.0" layoutY="180.0" promptText="Data Comanda" />
+   </children>
+</AnchorPane>

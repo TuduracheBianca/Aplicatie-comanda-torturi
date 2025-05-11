@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.Scene?>
+<?import javafx.stage.Stage?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController">
+   <children>
+      <!-- TableView pentru Torturi -->
+      <TableView fx:id="tortTable" layoutX="20.0" layoutY="50.0" prefHeight="200.0" prefWidth="400.0">
+         <columns>
+            <TableColumn fx:id="idTortColumn" text="ID" prefWidth="100.0"/>
+            <TableColumn fx:id="tipTortColumn" text="Tip Tort" prefWidth="300.0"/>
+         </columns>
+      </TableView>
+
+      <!-- Tabel pentru Comenzi -->
+      <TableView fx:id="comandaTable" layoutX="20.0" layoutY="300.0" prefHeight="200.0" prefWidth="400.0">
+         <columns>
+            <TableColumn fx:id="idComandaColumn" text="ID Comanda" prefWidth="100.0"/>
+            <TableColumn fx:id="torturiComandaColumn" text="Torturi" prefWidth="200.0"/>
+            <TableColumn fx:id="dataComandaColumn" text="Data Comanda" prefWidth="100.0"/>
+         </columns>
+      </TableView>
+
+      <!-- Formular pentru adăugarea unui tort -->
+      <TextField fx:id="idTortField" layoutX="20.0" layoutY="520.0" promptText="ID Tort" />
+      <TextField fx:id="numeTortField" layoutX="200.0" layoutY="520.0" promptText="Nume Tort" />
+
+      <!-- Butoane pentru adăugarea, ștergerea și modificarea torturilor -->
+      <Button text="Adaugă Tort" layoutX="20.0" layoutY="550.0" onAction="#adaugaTort"/>
+      <Button text="Șterge Tort" layoutX="120.0" layoutY="550.0" onAction="#stergeTort"/>
+      <Button text="Modifică Tort" layoutX="220.0" layoutY="550.0" onAction="#modificaTort"/>
+
+      <!-- Formular pentru comenzi -->
+      <TextField fx:id="idComandaField" layoutX="450.0" layoutY="50.0" promptText="ID Comanda" />
+      <TextField fx:id="torturiComandaField" layoutX="450.0" layoutY="80.0" promptText="Torturi (ID-uri separate prin virgulă)" />
+      <TextField fx:id="dataComandaField" layoutX="450.0" layoutY="110.0" promptText="Data Comanda (dd-MM-yyyy HH:mm)" />
+
+      <!-- Butoane pentru adăugarea, ștergerea și modificarea comenzilor -->
+      <Button text="Adaugă Comandă" layoutX="450.0" layoutY="150.0" onAction="#adaugaComanda"/>
+      <Button text="Șterge Comandă" layoutX="550.0" layoutY="150.0" onAction="#stergeComanda"/>
+      <Button text="Modifică Comandă" layoutX="650.0" layoutY="150.0" onAction="#modificaComanda"/>
+
+      <!-- ListView pentru a vizualiza torturi și comenzi -->
+      <ListView fx:id="listView" layoutX="450.0" layoutY="200.0" prefHeight="200.0" prefWidth="300.0" />
+
+      <!-- Panou pentru dialoguri de succes/eroare -->
+      <DialogPane fx:id="dialogPane" layoutX="20.0" layoutY="700.0" prefWidth="730.0" prefHeight="50.0"/>
+   </children>
+</AnchorPane>
